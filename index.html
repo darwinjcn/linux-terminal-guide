@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Linux Terminal Mastery | Guía del Ingeniero en Informática</title>
+    <meta name="description" content="Los 10 comandos esenciales de Linux que todo Ingeniero en Informática debe dominar. Guía interactiva profesional.">
+    <meta name="darkreader" content="false">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#0d1117">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="assets/images/icons/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/images/icons/favicon.svg">
+    <link rel="stylesheet" href="css/styles.css">
+<base target="_blank">
+</head>
+<body>
+    <div class="terminal-bar">
+        <div class="terminal-buttons">
+            <span class="btn btn-red"></span>
+            <span class="btn btn-yellow"></span>
+            <span class="btn btn-green"></span>
+        </div>
+        <div class="terminal-title">darwin@linux-mastery: ~/terminal-guide</div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="prompt">$</span> LinuxTerminal<span class="highlight">Mastery</span>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="javascript:void(0)" data-scroll="inicio" class="nav-link active">Inicio</a>
+            <a href="javascript:void(0)" data-scroll="distro" class="nav-link">Distro</a>
+            <a href="javascript:void(0)" data-scroll="comandos" class="nav-link">Comandos</a>
+            <a href="javascript:void(0)" data-scroll="tips" class="nav-link">Pro Tips</a>
+        </div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menú">☰</button>
+    </nav>
+
+    <header id="inicio" class="hero">
+        <div class="hero-content">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <span class="terminal-dot red"></span>
+                    <span class="terminal-dot yellow"></span>
+                    <span class="terminal-dot green"></span>
+                    <span class="terminal-filename">bash</span>
+                </div>
+                <div class="terminal-body">
+                    <p><span class="prompt-user">darwin@linux-mastery</span>:<span class="prompt-path">~</span>$ <span class="typing-text" id="typing-text"></span><span class="cursor">█</span></p>
+                    <p class="output-line hidden" id="output-1">Iniciando guía de comandos Linux...</p>
+                    <p class="output-line hidden" id="output-2">✓ 10 comandos esenciales cargados</p>
+                    <p class="output-line hidden" id="output-3">✓ Distribución recomendada: Ubuntu 24.04 LTS</p>
+                    <p class="output-line hidden" id="output-4">✓ Modo experto activado</p>
+                </div>
+            </div>
+            <h1 class="hero-title">Domina la <span class="gradient-text">Terminal Linux</span></h1>
+            <p class="hero-subtitle">Los 10 comandos que separan a un usuario común de un Ingeniero en Informática profesional.</p>
+            <div class="hero-stats">
+                <div class="stat"><span class="stat-number">10</span><span class="stat-label">Comandos</span></div>
+                <div class="stat"><span class="stat-number">1</span><span class="stat-label">Distro</span></div>
+                <div class="stat"><span class="stat-number">∞</span><span class="stat-label">Posibilidades</span></div>
+            </div>
+            <a href="javascript:void(0)" data-scroll="comandos" class="cta-button"><span class="cta-icon">⚡</span> Explorar Comandos</a>
+        </div>
+        <div class="scroll-indicator">
+            <span class="scroll-text">scroll</span>
+            <div class="scroll-arrow">↓</div>
+        </div>
+    </header>
+
+    <section id="distro" class="distro-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">$ cat distro_recomendada.txt</span>
+                <h2 class="section-title">Mi Distribución <span class="highlight">Recomendada</span></h2>
+            </div>
+            <div class="distro-card">
+                <div class="distro-logo">
+                    <div class="ubuntu-circle">
+                        <div class="ubuntu-inner"><span class="ubuntu-icon">🐧</span></div>
+                    </div>
+                </div>
+                <div class="distro-info">
+                    <h3 class="distro-name">Ubuntu 24.04 LTS <span class="badge">Recomendado</span></h3>
+                    <p class="distro-description">Después de años trabajando con servidores en producción, te puedo decir con certeza: <strong>Ubuntu LTS es el estándar de la industria</strong>.</p>
+                    <div class="distro-features">
+                        <div class="feature"><span class="feature-icon">🛡️</span><div><h4>Soporte Largo Plazo</h4><p>5 años de actualizaciones de seguridad</p></div></div>
+                        <div class="feature"><span class="feature-icon">📚</span><div><h4>Documentación Extensa</h4><p>La comunidad más grande del mundo</p></div></div>
+                        <div class="feature"><span class="feature-icon">🏢</span><div><h4>Enterprise Ready</h4><p>AWS, Azure, Google Cloud por defecto</p></div></div>
+                        <div class="feature"><span class="feature-icon">⚙️</span><div><h4>Systemd Nativo</h4><p>Gestión de servicios estandarizada</p></div></div>
+                    </div>
+                    <div class="distro-terminal">
+                        <div class="terminal-header-small"><span>bash</span></div>
+                        <code class="terminal-code">
+<span class="comment"># Verificar versión de Ubuntu</span>
+<span class="prompt-user">darwin@server</span>:<span class="prompt-path">~</span>$ <span class="command">lsb_release -a</span>
+<span class="output">Distributor ID: Ubuntu</span>
+<span class="output">Description:    Ubuntu 24.04.1 LTS</span>
+<span class="output">Release:        24.04</span>
+<span class="output">Codename:       noble</span>
+                        </code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="comandos" class="commands-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">$ ls -la /comandos/esenciales/</span>
+                <h2 class="section-title">Los <span class="highlight">10 Comandos</span> que Cambiarán tu Vida</h2>
+                <p class="section-desc">No son los más "impresionantes", son los que uso <strong>todos los días</strong> en producción.</p>
+            </div>
+
+            <div class="commands-grid">
+                <article class="command-card" data-command="ls">
+                    <div class="command-number">01</div>
+                    <div class="command-header">
+                        <h3 class="command-name">ls -la</h3>
+                        <span class="command-category">Navegación</span>
+                    </div>
+                    <p class="command-desc">Listar archivos con permisos y archivos ocultos. El primer comando que ejecuto al entrar a cualquier servidor.</p>
+                    <div class="command-demo">
+                        <div class="demo-header">
+                            <span class="demo-title">💻 Terminal</span>
+                            <button class="copy-btn" data-copy="ls -la">📋 Copiar</button>
+                        </div>
+                        <pre class="demo-code"><code><span class="prompt-user">darwin@server</span>:<span class="prompt-path">/var/www</span>$ <span class="command">ls -la</span>
+<span class="output">total 32</span>
+<span class="output">drwxr-xr-x  4 root root 4096 Jan 15 09:23 .</span>
+<span class="output">-rw-r--r--  1 root root  220 Jan 15 09:20 .env</span>
+<span class="output">-rw-r--r--  1 root root  12K Jan 15 09:10 index.html</span>
+<span class="output">drwxr-xr-x  2 root root 4096 Jan 15 09:15 assets</span></code></pre>
+                    </div>
+                    <div class="command-tips">
+                        <h4>🔑 Pro Tips:</h4>
+                        <ul>
+                            <li><code>ls -lah</code> → tamaños human-readable (KB, MB, GB)</li>
+                            <li><code>ls -lt</code> → ordenado por fecha de modificación</li>
+                            <li><code>ls -la | grep "^-"</code> → solo archivos (no directorios)</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="command-card" data-command="cd">
+                    <div class="command-number">02</div>
+                    <div class="command-header">
+                        <h3 class="command-name">cd / pwd</h3>
+                        <span class="command-category">Navegación</span>
+                    </div>
+                    <p class="command-desc">Navegación entre directorios y conocer tu ubicación absoluta. Dominar rutas relativas vs absolutas te ahorra horas.</p>
+                    <div class="command-demo">
+                        <div class="demo-header">
+                            <span class="demo-title">💻 Terminal</span>
+                            <button class="copy-btn" data-copy="pwd && cd .. && pwd">📋 Copiar</button>
+                        </div>
+                        <pre class="demo-code"><code><span class="prompt-user">darwin@server</span>:<span class="prompt-path">/home/darwin/web</span>$ <span class="command">pwd</span>
+<span class="output">/home/darwin/web</span>
+
+<span class="prompt-user">darwin@server</span>:<span class="prompt-path">/home/darwin/web</span>$ <span class="command">cd ../../var/log</span>
+
+<span class="prompt-user">darwin@server</span>:<span class="prompt-path">/var/log</span>$ <span class="command">pwd</span>
+<span class="output">/var/log</span>
+
+<span class="prompt-user">darwin@server</span>:<span class="prompt-path">/var/log</span>$ <span class="command">cd -</span>
+<span class="output">/home/darwin/web</span></code></pre>
+                    </div>
+                    <div class="command-tips">
+                        <h4>🔑 Pro Tips:</h4>
+                        <ul>
+                            <li><code>cd -</code> → vuelve al directorio anterior (¡mi favorito!)</li>
+                            <li><code>cd ~</code> → siempre a tu home, desde cualquier lugar</li>
+                            <li><code>pwd -P</code> → ruta física real (resuelve symlinks)</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="command-card featured" data-command="chmod">
+                    <div class="command-number">03</div>
+                    <div class="command-header">
+                        <h3 class="command-name">chmod / chown</h3>
+                        <span class="command-category">Permisos</span>
+                        <span class="badge-hot">🔥 Crítico</span>
+                    </div>
+                    <p class="command-desc">Gestión de permisos y propiedad de archivos. El comando que más me ha salvado de vulnerabilidades en producción.</p>
+                    <div class="command-demo">
+                        <div class="demo-header">
+                            <span class="demo-title">💻 Terminal</span>
+                            <button class="copy-btn" data-copy="chmod 755 script.sh && chown www-data:www-data script.sh">📋 Copiar</button>
+                        </div>
+                        <pre class="demo-code"><code><span class="comment"># Ver permisos actuales</span>
+<span class="prompt-user">darwin@server</span>:<span class="prompt-path">/var/www</span>$ <span class="command">ls -la script.sh</span>
+<span class="output">-rw-rw-r-- 1 darwin darwin 2.4K Jan 15 10:00 script.sh</span>
+
+<span class="comment"># Cambiar permisos y propietario</span>
+<span class="prompt-user">darwin@server</span>:<span class="prompt-path">/var/www</span>$ <span class="command">chmod 755 script.sh</span>
+<span class="prompt-user">darwin@server</span>:<span class="prompt-path">/var/www</span>$ <span class="command">chown www-data:www-data script.sh</span>
+
+<span class="comment"># Verificar cambios</span>
+<span class="prompt-user">darwin@server</span>:<span class="prompt-path">/var/www</span>$ <span class="command">ls -la script.sh</span>
+<span class="output">-rwxr-xr-x 1 www-data www-data 2.4K Jan 15 10:05 script.sh</span></code></pre>
+                    </div>
+                    <div class="permissions-table">
+                        <h4>📊 Tabla de Permisos:</h4>
+                        <table>
+                            <tr><th>Número</th><th>Permiso</th><th>Uso típico</th></tr>
+                            <tr><td><code>7</code></td><td>rwx</td><td>Scripts ejecutables</td></tr>
+                            <tr><td><code>6</code></td><td>rw-</td><td>Archivos de configuración</td></tr>
+                            <tr><td><code>5</code></td><td>r-x</td><td>Directorios públicos</td></tr>
+                            <tr><td><code>4</code></td><td>r--</td><td>Solo lectura</td></tr>
+                        </table>
+                    </div>
+                    <div class="command-tips">
+                        <h4>🔑 Pro Tips:</h4>
+                        <ul>
+                            <li><code>chmod -R 755 directorio/</code> → recursivo (¡con cuidado!)</li>
+                            <li><code>chmod +x archivo</code> → forma simbólica, más legible</li>
+                            <li><code>chown -R usuario:grupo dir/</code> → cambiar propietario recursivo</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="command-card" data-command="grep">
+                    <div class="command-number">04</div>
+                    <div class="command-header">
+                        <h3 class="command-name">grep -r</h3>
+                        <span class="command-category">Búsqueda</span>
+                    </div>
+                    <p class="command-desc">Búsqueda de patrones en archivos. Mi herramienta #1 para debuggear logs y encontrar configuraciones en servidores desconocidos.</p>
+                    <div class="command-demo">
+                        <div class="demo-header">
+                            <span class="demo-title">💻 Terminal</span>
+                            <button class="copy-btn" data-copy='grep -r "ERROR" /var/log/ --include="*.log" -n'>📋 Copiar</button>
+                        </div>
+                        <pre class="demo-code"><code><span class="comment"># Buscar "ERROR" en todos los logs</span>
+<span class="prompt-user">darwin@server</span>:<span class="prompt-path">~</span>$ <span class="command">grep -r "ERROR" /var/log/ --include="*.log" -n</span>
+<span class="output">/var/log/nginx/error.log:42: [ERROR] upstream timeout</span>
+<span class="output">/var/log/app/server.log:127: [ERROR] Database connection failed</span>
+
+<span class="comment"># Buscar ignorando mayúsculas/minúsculas</span>
+<span class="prompt-user">darwin@server</span>:<span class="prompt-path">~</span>$ <span class="command">grep -ri "failed" /var/log/ -n | head -5</span>
+
+<span class="comment"># Buscar con contexto</span>
+<span class="prompt-user">darwin@server</span>:<span class="prompt-path">~</span>$ <span class="command">grep -C 2 "CRITICAL" /var/log/syslog</span></code></pre>
+                    </div>
+                    <div class="command-tips">
+                        <h4>🔑 Pro Tips:</h4>
+                        <ul>
+                            <li><code>grep -v "pattern"</code> → invertir (líneas que NO coinciden)</li>
+                            <li><code>grep -E "patrón1|patrón2"</code> → expresiones regulares extendidas</li>
+                            <li><code>zgrep "pattern" archivo.gz</code> → buscar en archivos comprimidos</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="command-card" data-command="find">
+                    <div class="command-number">05</div>
+                    <div class="command-header">
+                        <h3 class="command-name">find / locate</h3>
+                        <span class="command-category">Localización</span>
+                    </div>
+                    <p class="command-desc">Localización avanzada de archivos por nombre, tamaño, fecha, permisos... Imprescindible cuando heredas un servidor.</p>
+                    <div class="command-demo">
+                        <div class="demo-header">
+                            <span class="demo-title">💻 Terminal</span>
+                            <button class="copy-btn" data-copy='find / -name "*.conf" -type f -size +1k 2>/dev/null'>📋 Copiar</button>
+                        </div>
+                        <pre class="demo-code"><code><span class="comment"># Archivos de configuración grandes</span>
+<span class="prompt-user">darwin@server</span>:<span class="prompt-path">~</span>$ <span class="command">find /etc -name "*.conf" -type f -size +10k</span>
+<span class="output">/etc/nginx/nginx.conf</span>
+<span class="output">/etc/mysql/my.cnf</span>
+
+<span class="comment"># Archivos modificados en las últimas 24h</span>
+<span class="prompt-user">darwin@server</span>:<span class="prompt-path">~</span>$ <span class="command">find /var/www -mtime -1 -type f</span>
+<span class="output">/var/www/index.html</span>
+
+<span class="comment"># locate (más rápido, usa base de datos)</span>
+<span class="prompt-user">darwin@server</span>:<span class="prompt-path">~</span>$ <span class="command">locate nginx.conf</span>
+<span class="output">/etc/nginx/nginx.conf</span></code></pre>
+                    </div>
+                    <div class="command-tips">
+                        <h4>🔑 Pro Tips:</h4>
+                        <ul>
+                            <li><code>find . -empty -type d</code> → directorios vacíos</li>
+                            <li><code>find . -perm 777</code> → archivos con permisos peligrosos</li>
+                            <li><code>sudo updatedb</code> → actualizar base de datos de locate</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="command-card" data-command="ps">
+                    <div class="command-number">06</div>
+                    <div class="command-header">
+                        <h3 class="command-name">ps aux / htop</h3>
+                        <span class="command-category">Monitoreo</span>
+                    </div>
+                    <p class="command-desc">Monitoreo de procesos. Cuando un servidor se pone lento a las 3 AM, estos comandos son tu primer diagnóstico.</p>
+                    <div class="command-demo">
+                        <div class="demo-header">
+                            <span class="demo-title">💻 Terminal</span>
+                            <button class="copy-btn" data-copy="ps aux --sort=-%mem | head -10">📋 Copiar</button>
+                        </div>
+                        <pre class="demo-code"><code><span class="comment"># Top 10 procesos por uso de memoria</span>
+<span class="prompt-user">darwin@server</span>:<span class="prompt-path">~</span>$ <span class="command">ps aux --sort=-%mem | head -10</span>
+<span class="output">USER       PID %CPU %MEM    VSZ   RSS COMMAND</span>
+<span class="output">mysql     1523  5.2 45.3 4.2G  1.8G mysqld</span>
+<span class="output">nodejs    2847  2.1 12.1 890M  512M node app.js</span>
+<span class="output">nginx     1024  0.5  2.3  120M  48M nginx: worker</span>
+
+<span class="comment"># Buscar procesos específicos</span>
+<span class="prompt-user">darwin@server</span>:<span class="prompt-path">~</span>$ <span class="command">ps aux | grep "node" | grep -v grep</span>
+
+<span class="comment"># htop (interactivo, más visual)</span>
+<span class="prompt-user">darwin@server</span>:<span class="prompt-path">~</span>$ <span class="command">htop</span></code></pre>
+                    </div>
+                    <div class="command-tips">
+                        <h4>🔑 Pro Tips:</h4>
+                        <ul>
+                            <li><code>ps -ef | grep "[p]roceso"</code> → truco para excluir el grep mismo</li>
+                            <li><code>kill -9 PID</code> → último recurso para matar procesos zombie</li>
+                            <li><code>watch -n 1 'ps aux --sort=-%cpu | head'</code> → actualización en tiempo real</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="command-card" data-command="tar">
+                    <div class="command-number">07</div>
+                    <div class="command-header">
+                        <h3 class="command-name">tar / gzip</h3>
+                        <span class="command-category">Compresión</span>
+                    </div>
+                    <p class="command-desc">Compresión y empaquetado. Backup de proyectos, transferencia de archivos, despliegue de aplicaciones... Lo uso semanalmente.</p>
+                    <div class="command-demo">
+                        <div class="demo-header">
+                            <span class="demo-title">💻 Terminal</span>
+                            <button class="copy-btn" data-copy="tar -czvf backup-$(date +%Y%m%d).tar.gz /var/www/">📋 Copiar</button>
+                        </div>
+                        <pre class="demo-code"><code><span class="comment"># Crear backup comprimido con fecha</span>
+<span class="prompt-user">darwin@server</span>:<span class="prompt-path">~</span>$ <span class="command">tar -czvf backup-$(date +%Y%m%d).tar.gz /var/www/</span>
+<span class="output">var/www/</span>
+<span class="output">var/www/index.html</span>
+<span class="output">var/www/css/styles.css</span>
+
+<span class="comment"># Extraer un .tar.gz</span>
+<span class="prompt-user">darwin@server</span>:<span class="prompt-path">~</span>$ <span class="command">tar -xzvf backup-20240115.tar.gz -C /restaurar/aqui/</span>
+
+<span class="comment"># Ver contenido sin extraer</span>
+<span class="prompt-user">darwin@server</span>:<span class="prompt-path">~</span>$ <span class="command">tar -tzvf backup-20240115.tar.gz | less</span></code></pre>
+                    </div>
+                    <div class="command-tips">
+                        <h4>🔑 Pro Tips:</h4>
+                        <ul>
+                            <li><code>tar -czvf</code> → c(reate) z(gzip) v(erbose) f(ile)</li>
+                            <li><code>tar -xzvf</code> → e(x)tract z(gzip) v(erbose) f(ile)</li>
+                            <li><code>tar -czvf - directorio/ | ssh server "cat > backup.tar.gz"</code> → backup remoto</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="command-card featured" data-command="ssh">
+                    <div class="command-number">08</div>
+                    <div class="command-header">
+                        <h3 class="command-name">ssh / scp / rsync</h3>
+                        <span class="command-category">Remoto</span>
+                        <span class="badge-hot">🔥 Crítico</span>
+                    </div>
+                    <p class="command-desc">Conexión remota segura y transferencia de archivos. El 90% de mi trabajo como ingeniero lo hago vía SSH.</p>
+                    <div class="command-demo">
+                        <div class="demo-header">
+                            <span class="demo-title">💻 Terminal</span>
+                            <button class="copy-btn" data-copy="ssh -i ~/.ssh/id_rsa darwin@192.168.1.100">📋 Copiar</button>
+                        </div>
+                        <pre class="demo-code"><code><span class="comment"># Conexión SSH con clave privada</span>
+<span class="prompt-user">darwin@local</span>:<span class="prompt-path">~</span>$ <span class="command">ssh -i ~/.ssh/id_rsa darwin@192.168.1.100</span>
+<span class="output">Welcome to Ubuntu 24.04.1 LTS</span>
+<span class="output">Last login: Mon Jan 15 08:30:15 2024</span>
+
+<span class="prompt-user">darwin@server</span>:<span class="prompt-path">~</span>$ <span class="comment"># ¡Ya estoy dentro del servidor!</span>
+
+<span class="comment"># Copiar archivo local a remoto (scp)</span>
+<span class="prompt-user">darwin@local</span>:<span class="prompt-path">~</span>$ <span class="command">scp app.zip darwin@server:/var/www/</span>
+
+<span class="comment"># Sincronización inteligente (rsync)</span>
+<span class="prompt-user">darwin@local</span>:<span class="prompt-path">~/proyecto</span>$ <span class="command">rsync -avz --progress --exclude='node_modules' ./ darwin@server:/var/www/proyecto/</span>
+<span class="output">index.html          12.5K  100%</span>
+<span class="output">css/styles.css       8.2K  100%</span></code></pre>
+                    </div>
+                    <div class="command-tips">
+                        <h4>🔑 Pro Tips:</h4>
+                        <ul>
+                            <li><code>ssh-copy-id usuario@servidor</code> → copiar tu clave pública</li>
+                            <li><code>rsync -avz --delete</code> → sincroniza y elimina archivos obsoletos</li>
+                            <li><code>ssh -L 8080:localhost:80 servidor</code> → túnel SSH (port forwarding)</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="command-card" data-command="systemctl">
+                    <div class="command-number">09</div>
+                    <div class="command-header">
+                        <h3 class="command-name">systemctl</h3>
+                        <span class="command-category">Servicios</span>
+                    </div>
+                    <p class="command-desc">Gestión de servicios con systemd. Reiniciar nginx, habilitar MySQL al inicio, ver el estado de Docker... Todo pasa por aquí.</p>
+                    <div class="command-demo">
+                        <div class="demo-header">
+                            <span class="demo-title">💻 Terminal</span>
+                            <button class="copy-btn" data-copy="systemctl status nginx">📋 Copiar</button>
+                        </div>
+                        <pre class="demo-code"><code><span class="comment"># Ver estado de un servicio</span>
+<span class="prompt-user">darwin@server</span>:<span class="prompt-path">~</span>$ <span class="command">systemctl status nginx</span>
+<span class="output">● nginx.service - A high performance web server</span>
+<span class="output">     Loaded: loaded (/lib/systemd/system/nginx.service; enabled)</span>
+<span class="output">     Active: <span class="success">active (running)</span> since Mon 2024-01-15 08:00:00 UTC</span>
+<span class="output">   Main PID: 1024 (nginx)</span>
+<span class="output">     Memory: 12.3M</span>
+
+<span class="comment"># Reiniciar un servicio</span>
+<span class="prompt-user">darwin@server</span>:<span class="prompt-path">~</span>$ <span class="command">sudo systemctl restart nginx</span>
+
+<span class="comment"># Habilitar al inicio del sistema</span>
+<span class="prompt-user">darwin@server</span>:<span class="prompt-path">~</span>$ <span class="command">sudo systemctl enable mysql</span>
+
+<span class="comment"># Listar servicios activos</span>
+<span class="prompt-user">darwin@server</span>:<span class="prompt-path">~</span>$ <span class="command">systemctl list-units --type=service --state=running</span></code></pre>
+                    </div>
+                    <div class="command-tips">
+                        <h4>🔑 Pro Tips:</h4>
+                        <ul>
+                            <li><code>systemctl is-active nginx</code> → solo devuelve "active" o "inactive"</li>
+                            <li><code>systemctl daemon-reload</code> → recargar configuración systemd</li>
+                            <li><code>systemctl list-dependencies nginx</code> → ver dependencias</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="command-card" data-command="journalctl">
+                    <div class="command-number">10</div>
+                    <div class="command-header">
+                        <h3 class="command-name">journalctl / dmesg</h3>
+                        <span class="command-category">Logs</span>
+                    </div>
+                    <p class="command-desc">Análisis de logs del sistema. Cuando todo falla y no sabes por qué, journalctl tiene la respuesta.</p>
+                    <div class="command-demo">
+                        <div class="demo-header">
+                            <span class="demo-title">💻 Terminal</span>
+                            <button class="copy-btn" data-copy='journalctl -u nginx -f --since "1 hour ago"'>📋 Copiar</button>
+                        </div>
+                        <pre class="demo-code"><code><span class="comment"># Logs de nginx en tiempo real</span>
+<span class="prompt-user">darwin@server</span>:<span class="prompt-path">~</span>$ <span class="command">journalctl -u nginx -f --since "1 hour ago"</span>
+<span class="output">Jan 15 10:23:45 server nginx[1024]: 192.168.1.50 - GET /api/users 200</span>
+<span class="output">Jan 15 10:23:46 server nginx[1024]: 192.168.1.51 - POST /api/login 401</span>
+
+<span class="comment"># Logs de boot (último arranque)</span>
+<span class="prompt-user">darwin@server</span>:<span class="prompt-path">~</span>$ <span class="command">journalctl -b</span>
+
+<span class="comment"># Errores del kernel</span>
+<span class="prompt-user">darwin@server</span>:<span class="prompt-path">~</span>$ <span class="command">journalctl -p err --since "24 hours ago"</span>
+
+<span class="comment"># dmesg: mensajes del kernel</span>
+<span class="prompt-user">darwin@server</span>:<span class="prompt-path">~</span>$ <span class="command">dmesg | grep -i error | tail -20</span></code></pre>
+                    </div>
+                    <div class="command-tips">
+                        <h4>🔑 Pro Tips:</h4>
+                        <ul>
+                            <li><code>journalctl -f</code> → modo "follow" (como tail -f pero mejor)</li>
+                            <li><code>journalctl --disk-usage</code> → espacio que ocupan los logs</li>
+                            <li><code>journalctl --vacuum-time=7d</code> → limpiar logs mayores a 7 días</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="tips" class="tips-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">$ cat /usr/share/pro_tips.txt</span>
+                <h2 class="section-title">Consejos del <span class="highlight">Experto</span></h2>
+            </div>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">🎯</div>
+                    <h3>Alias Personalizados</h3>
+                    <p>Crea alias en tu <code>~/.bashrc</code>:</p>
+                    <pre class="tip-code">alias ll='ls -la'
+alias ..='cd ..'
+alias update='sudo apt update && sudo apt upgrade'</pre>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">📜</div>
+                    <h3>Historial Inteligente</h3>
+                    <p>Busca en tu historial con <code>Ctrl+R</code>. Presiona repetidamente para ir atrás.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🔗</div>
+                    <h3>Pipes y Redirección</h3>
+                    <p>Domina <code>|</code>, <code>></code>, <code>>></code>. Son la base del scripting:</p>
+                    <pre class="tip-code">comando | grep "error" > errores.log 2>&1</pre>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🛡️</div>
+                    <h3>Tab Completion</h3>
+                    <p>Presiona <code>Tab</code> para autocompletar. Doble <code>Tab</code> muestra opciones.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">⚡</div>
+                    <h3>Atajos de Teclado</h3>
+                    <p><code>Ctrl+A</code> inicio, <code>Ctrl+E</code> final, <code>Ctrl+U</code> borra línea, <code>Ctrl+L</code> limpia.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">📚</div>
+                    <h3>man pages</h3>
+                    <p><code>man comando</code> es tu mejor amigo. También <code>comando --help</code> para resumen rápido.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="prompt">$</span> LinuxTerminal<span class="highlight">Mastery</span>
+                </div>
+                <p class="footer-desc">Guía creada por un Ingeniero en Informática para futuros ingenieros. <br>Ubuntu 24.04 LTS · Bash · Systemd</p>
+                <div class="footer-links">
+                    <a href="https://darwinjcn.github.io/" target="_blank" rel="noopener noreferrer" class="footer-link">🌐 Portafolio</a>
+                    <a href="https://github.com/darwinjcn" target="_blank" rel="noopener noreferrer" class="footer-link">💻 GitHub</a>
+                </div>
+                <div class="footer-terminal">
+                    <code><span class="prompt-user">darwin@linux-mastery</span>:<span class="prompt-path">~</span>$ <span class="command">exit</span></code>
+                    <p class="logout-msg">logout · Gracias por visitar · Hasta la próxima</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Darwin Colmenares. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Volver arriba">↑</button>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
