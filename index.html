@@ -15,8 +15,30 @@
     <link rel="apple-touch-icon" href="assets/images/icons/favicon.svg">
     <link rel="stylesheet" href="css/styles.css">
 <base target="_blank">
+<base target="_blank">
 </head>
 <body>
+    <!-- 
+        ╔══════════════════════════════════════════════════════════════╗
+        ║  LINUX TERMINAL MASTERY: MI DIARIO DE APRENDIZAJE           ║
+        ║                                                              ║
+        ║  Cuando empecé en Ingeniería en Informática, la terminal    ║
+        ║  me parecía un monstruo. Los profesores asumían que ya      ║
+        ║  sabíamos navegar por directorios, entender permisos y      ║
+        ║  leer logs. Yo no sabía nada de eso.                        ║
+        ║                                                              ║
+        ║  Este blog es lo que YO hubiese querido encontrar el        ║
+        ║  primer día: una guía escrita por alguien que pasó por      ║
+        ║  lo mismo, que cometió errores, y que hoy trabaja con       ║
+        ║  servidores Linux en producción.                            ║
+        ║                                                              ║
+        ║  No es teoría seca. Son los 10 comandos que uso TODOS los   ║
+        ║  días. Los que me han salvado a las 3 AM cuando un          ║
+        ║  servidor se cae. Los que me hubiese gustado que alguien    ║
+        ║  me enseñara con calma y ejemplos reales.                   ║
+        ╚══════════════════════════════════════════════════════════════╝
+    -->
+
     <div class="terminal-bar">
         <div class="terminal-buttons">
             <span class="btn btn-red"></span>
@@ -71,6 +93,22 @@
         </div>
     </header>
 
+    <!-- 
+        ═══════════════════════════════════════════════════════════════
+        SECCIÓN 1: MI DISTRIBUCIÓN RECOMENDADA
+        ═══════════════════════════════════════════════════════════════
+
+        La pregunta que más me hacen: "¿Qué Linux debo instalar?"
+
+        Cuando empecé, probé Ubuntu, Debian, Fedora, Arch... hasta 
+        que conseguí mi primer trabajo con servidores. Ahí entendí 
+        por qué Ubuntu LTS es el estándar de la industria.
+
+        No es el más "cool". Es el que te va a salvar el día cuando
+        necesites documentación, soporte, o desplegar en AWS/Azure.
+
+        Te cuento por qué, con ejemplos reales de mi día a día.
+    -->
     <section id="distro" class="distro-section">
         <div class="container">
             <div class="section-header">
@@ -108,6 +146,23 @@
         </div>
     </section>
 
+    <!-- 
+        ═══════════════════════════════════════════════════════════════
+        SECCIÓN 2: LOS 10 COMANDOS QUE CAMBIARON MI VIDA
+        ═══════════════════════════════════════════════════════════════
+
+        No te voy a dar 200 comandos que olvidarás mañana.
+        Te voy a dar los 10 que uso TODOS los días en producción.
+
+        Cada uno tiene:
+        • Por qué es importante (mi experiencia real)
+        • Cómo lo uso (comandos reales, no ejemplos inventados)
+        • Los errores que cometí aprendiéndolo
+        • Trucos que descubrí con el tiempo
+
+        Los ordené por frecuencia de uso, no por dificultad.
+        Empezamos con ls -la porque TODO empieza viendo dónde estás.
+    -->
     <section id="comandos" class="commands-section">
         <div class="container">
             <div class="section-header">
@@ -117,6 +172,26 @@
             </div>
 
             <div class="commands-grid">
+                <!-- 
+                    ─────────────────────────────────────────────────────────────
+                    COMANDO #01: ls -la
+                    ─────────────────────────────────────────────────────────────
+
+                    Mi historia con este comando:
+
+                    El primer día que entré a un servidor de producción, escribí
+                    "ls" y vi un montón de archivos. No vi los archivos ocultos.
+                    No vi los permisos. No entendía por qué no podía editar nada.
+
+                    Un senior me dijo: "Siempre entra con ls -la. Siempre."
+
+                    Desde ese día, es mi primer comando en CUALQUIER servidor.
+                    Te dice: dónde estás, qué hay, quién lo puede tocar, y qué
+                    está escondido.
+
+                    Los archivos ocultos (los que empiezan con .) son donde viven
+                    las configuraciones. Sin -la, eres ciego.
+                -->
                 <article class="command-card" data-command="ls">
                     <div class="command-number">01</div>
                     <div class="command-header">
@@ -146,6 +221,21 @@
                     </div>
                 </article>
 
+                <!-- 
+                    ─────────────────────────────────────────────────────────────
+                    COMANDO #02: cd / pwd
+                    ─────────────────────────────────────────────────────────────
+
+                    Parece básico, ¿verdad? Pero dominar rutas relativas vs
+                    absolutas me ahorró horas de frustración.
+
+                    Mi error clásico: copiar una ruta absoluta de un servidor
+                    a otro, donde la estructura de directorios era diferente.
+
+                    "cd -" es mi truco favorito. Cuando estás saltando entre
+                    /var/log y /etc/nginx cien veces al día, ese guion te
+                    convierte en un ninja.
+                -->
                 <article class="command-card" data-command="cd">
                     <div class="command-number">02</div>
                     <div class="command-header">
@@ -179,6 +269,24 @@
                     </div>
                 </article>
 
+                <!-- 
+                    ─────────────────────────────────────────────────────────────
+                    COMANDO #03: chmod / chown  [🔥 CRÍTICO]
+                    ─────────────────────────────────────────────────────────────
+
+                    Este comando me salvó de un desastre. Literalmente.
+
+                    Estaba configurando un servidor web y subí archivos con
+                    permisos 777 (lectura, escritura y ejecución para TODOS).
+                    Un atacante explotó eso y casi borra la base de datos.
+
+                    Aprendí a la mala que los permisos no son "lo dejo abierto
+                    para que funcione". Son seguridad. Son control. Son tu
+                    primera línea de defensa.
+
+                    Hoy, antes de dormir tranquilo, verifico permisos.
+                    Te enseño la tabla que tengo pegada en mi monitor.
+                -->
                 <article class="command-card featured" data-command="chmod">
                     <div class="command-number">03</div>
                     <div class="command-header">
@@ -224,6 +332,22 @@
                     </div>
                 </article>
 
+                <!-- 
+                    ─────────────────────────────────────────────────────────────
+                    COMANDO #04: grep -r
+                    ─────────────────────────────────────────────────────────────
+
+                    Este es mi bisturí digital. Cuando un servidor falla y
+                    no sabes por qué, grep te encuentra la aguja en el pajar.
+
+                    Mi momento "eureka": estaba debuggeando un error que solo
+                    ocurría en producción. grep -r me llevó al archivo de
+                    configuración que tenía un valor diferente. 2 minutos vs
+                    2 horas de búsqueda manual.
+
+                    Aprende a usar --include y --exclude. Tu futuro yo te lo
+                    agradecerá cuando tengas que buscar en miles de archivos.
+                -->
                 <article class="command-card" data-command="grep">
                     <div class="command-number">04</div>
                     <div class="command-header">
@@ -257,6 +381,21 @@
                     </div>
                 </article>
 
+                <!-- 
+                    ─────────────────────────────────────────────────────────────
+                    COMANDO #05: find / locate
+                    ─────────────────────────────────────────────────────────────
+
+                    Heredé un servidor una vez. Nadie sabía dónde estaban
+                    los archivos de configuración. find me salvó.
+
+                    La diferencia clave: find busca en tiempo real (lento
+                    pero siempre actualizado), locate usa una base de datos
+                    (rápido pero puede estar desactualizada).
+
+                    Mi flujo: locate primero para una búsqueda rápida. Si
+                    no encuentro, find con criterios específicos.
+                -->
                 <article class="command-card" data-command="find">
                     <div class="command-number">05</div>
                     <div class="command-header">
@@ -292,6 +431,22 @@
                     </div>
                 </article>
 
+                <!-- 
+                    ─────────────────────────────────────────────────────────────
+                    COMANDO #06: ps aux / htop
+                    ─────────────────────────────────────────────────────────────
+
+                    3 AM. El servidor está lento. El cliente llama.
+                    ¿Qué haces primero? ps aux.
+
+                    Este comando me enseñó que no siempre el problema es
+                    el código. A veces es un proceso zombie, una query de
+                    MySQL que se quedó colgada, o un worker de nginx que
+                    consumió toda la RAM.
+
+                    htop es mi versión visual. Cuando necesito ver el
+                    panorama completo rápidamente, htop es mi dashboard.
+                -->
                 <article class="command-card" data-command="ps">
                     <div class="command-number">06</div>
                     <div class="command-header">
@@ -327,6 +482,22 @@
                     </div>
                 </article>
 
+                <!-- 
+                    ─────────────────────────────────────────────────────────────
+                    COMANDO #07: tar / gzip
+                    ─────────────────────────────────────────────────────────────
+
+                    Backup semanal. Lo hago religiosamente desde que perdí
+                    un proyecto entero por no tener copias de seguridad.
+
+                    tar es mi caja de herramientas: empaqueta, comprime,
+                    transfiere. El truco de la fecha automática con $(date)
+                    me lo enseñó un compañero y nunca más nombré un backup
+                    "backup_final_final2.tar.gz".
+
+                    rsync (que veremos más adelante) es para sincronización.
+                    tar es para archivar. Cada uno tiene su momento.
+                -->
                 <article class="command-card" data-command="tar">
                     <div class="command-number">07</div>
                     <div class="command-header">
@@ -361,6 +532,25 @@
                     </div>
                 </article>
 
+                <!-- 
+                    ─────────────────────────────────────────────────────────────
+                    COMANDO #08: ssh / scp / rsync  [🔥 CRÍTICO]
+                    ─────────────────────────────────────────────────────────────
+
+                    El 90% de mi trabajo lo hago desde mi laptop, pero los
+                    servidores están en otro país. SSH es mi puerta a todo.
+
+                    Cuando empecé, copiaba archivos con FTP. Un día, un
+                    compañero me mostró rsync y mi mente explotó.
+
+                    "¿Quieres decir que solo transfiere lo que cambió? ¿Y puedo
+                    excluir node_modules? ¿Y puedo hacerlo encriptado?"
+
+                    Sí. Todo eso. Y más.
+
+                    Esta sección es especial porque aquí es donde dejas de ser
+                    usuario y te conviertes en administrador de sistemas.
+                -->
                 <article class="command-card featured" data-command="ssh">
                     <div class="command-number">08</div>
                     <div class="command-header">
@@ -399,6 +589,23 @@
                     </div>
                 </article>
 
+                <!-- 
+                    ─────────────────────────────────────────────────────────────
+                    COMANDO #09: systemctl
+                    ─────────────────────────────────────────────────────────────
+
+                    systemd cambió todo. Antes era un caos de init scripts.
+                    Hoy, systemctl es mi panel de control.
+
+                    La primera vez que reinicié nginx con systemctl restart
+                    y funcionó a la primera, casi lloro. Antes tenía que
+                    buscar el PID, matar el proceso, verificar que no
+                    quedara zombie, y luego iniciar de nuevo.
+
+                    "enable" es la clave: configura el servicio para que
+                    arranque automáticamente. Sin eso, tu servidor web no
+                    vuelve después de un reinicio. Aprendí eso a la mala.
+                -->
                 <article class="command-card" data-command="systemctl">
                     <div class="command-number">09</div>
                     <div class="command-header">
@@ -438,6 +645,23 @@
                     </div>
                 </article>
 
+                <!-- 
+                    ─────────────────────────────────────────────────────────────
+                    COMANDO #10: journalctl / dmesg
+                    ─────────────────────────────────────────────────────────────
+
+                    Cuando TODO falla y no sabes por qué, journalctl tiene
+                    la respuesta. Es el diario íntimo de tu sistema.
+
+                    Mi técnica: journalctl -f (follow) en una terminal,
+                    reproduzco el error en otra. Veo en tiempo real qué
+                    dice el sistema. Es como escuchar los pensamientos
+                    de la máquina.
+
+                    dmesg es para cuando el problema es más profundo:
+                    drivers, hardware, kernel. No lo uso tan seguido,
+                    pero cuando lo necesito, es porque nada más funciona.
+                -->
                 <article class="command-card" data-command="journalctl">
                     <div class="command-number">10</div>
                     <div class="command-header">
@@ -477,6 +701,25 @@
         </div>
     </section>
 
+    <!-- 
+        ═══════════════════════════════════════════════════════════════
+        SECCIÓN 3: LO QUE NADIE ME ENSEÑÓ
+        ═══════════════════════════════════════════════════════════════
+
+        Estos no son comandos. Son hábitos. Son atajos. Son esas
+        pequeñas cosas que descubrí después de años de golpearme
+        la cabeza contra el teclado.
+
+        El Ctrl+R para buscar en el historial? Lo descubrí por
+        accidente. Ahorra HORAS.
+
+        Los alias? Los configuré porque me cansé de escribir
+        "sudo apt update && sudo apt upgrade" cada semana.
+
+        Esto es lo que un mentor te diría tomando café. Lo que
+        yo hubiese querido que alguien me dijera antes de mi
+        primer trabajo real.
+    -->
     <section id="tips" class="tips-section">
         <div class="container">
             <div class="section-header">
@@ -522,6 +765,24 @@ alias update='sudo apt update && sudo apt upgrade'</pre>
         </div>
     </section>
 
+    <!-- 
+        ═══════════════════════════════════════════════════════════════
+        CIERRE: GRACIAS POR LEER
+        ═══════════════════════════════════════════════════════════════
+
+        Si llegaste hasta aquí, ya sabes más de lo que yo sabía
+        cuando me gradué.
+
+        La terminal no es un enemigo. Es tu superpoder.
+        Cada comando que dominas es una herramienta que nadie
+        te puede quitar.
+
+        Sigue practicando. Rompe cosas en una VM. Lee man pages.
+        Y recuerda: todos los expertos empezaron escribiendo
+        "ls" y preguntándose qué hacía.
+
+        Nos vemos en producción. 🐧
+    -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
