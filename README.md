@@ -1,11 +1,11 @@
 # 🐧 Linux Terminal Mastery
 
-&gt; **Una guía interactiva de los 10 comandos esenciales que todo Ingeniero en Informática debe dominar.**
+> **Una guía interactiva de los 10 comandos esenciales que todo Ingeniero en Informática debe dominar.**
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-2ea043?style=flat-square&logo=github&scale=2)](https://darwinjcn.github.io/linux-terminal-guide/)
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white&scale=2)](https://developer.mozilla.org/es/docs/Web/HTML)
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white&scale=2)](https://developer.mozilla.org/es/docs/Web/CSS)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black&scale=2)](https://developer.mozilla.org/es/docs/Web/JavaScript)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-2ea043?style=flat-square&logo=github&scale=3)](https://darwinjcn.github.io/linux-terminal-guide/)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white&scale=3)](https://developer.mozilla.org/es/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white&scale=3)](https://developer.mozilla.org/es/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black&scale=3)](https://developer.mozilla.org/es/docs/Web/JavaScript)
 
 ---
 
