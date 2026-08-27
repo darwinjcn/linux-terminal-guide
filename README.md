@@ -1,6 +1,6 @@
 # 🐧 Linux Terminal Mastery
 
-> **Una guía interactiva de los 10 comandos esenciales que todo Ingeniero en Informática debe dominar.**
+&gt; **Una guía interactiva de los 10 comandos esenciales que todo Ingeniero en Informática debe dominar.**
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-2ea043?style=flat-square&logo=github&scale=2)](https://darwinjcn.github.io/linux-terminal-guide/)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white&scale=2)](https://developer.mozilla.org/es/docs/Web/HTML)
@@ -11,9 +11,9 @@
 
 ## 🎯 Sobre el Proyecto
 
-Este proyecto nace de la necesidad de crear un recurso técnico **claro, práctico y visualmente atractivo** para quienes están dando sus primeros pasos o quieren consolidar sus conocimientos en la administración de sistemas Linux.
+Este proyecto nace de la necesidad de crear un recurso técnico claro, práctico y visualmente atractivo para quienes están dando sus primeros pasos (o quieren consolidar sus conocimientos) en la administración de sistemas Linux.
 
-La idea es simple: compartir los comandos de terminal que **realmente uso en mi día a día como ingeniero**, presentados de forma creativa e interactiva, como el blog técnico al que me hubiera gustado tener acceso cuando empecé.
+La idea es simple: compartir los comandos de terminal que realmente uso en mi día a día como ingeniero, presentados de forma creativa e interactiva como si fuera un blog técnico al que yo mismo hubiera querido tener acceso cuando empecé.
 
 **Distribución Linux recomendada:** [Ubuntu 24.04 LTS](https://ubuntu.com/download/server)
 
@@ -26,46 +26,49 @@ La idea es simple: compartir los comandos de terminal que **realmente uso en mi 
 ---
 
 ## 📸 Vista Previa
-   Vista de Escritorio | Vista Móvil | Vista Web |
- |:-------------------:|:-----------:|:---------:|
- | ![Desktop Preview](assets/images/screenshots/screenshot_01_terminal.png) | ![Mobile Preview](assets/images/screenshots/screenshot_14_responsive.png) | ![Web Preview](assets/images/screenshots/screenshot_15_web.png) |
+
+| Vista de Escritorio | Vista Móvil | Vista Web |
+|:---:|:---:|:---:|
+| ![Desktop Preview](assets/images/screenshots/screenshot_01_terminal.png) | ![Mobile Preview](assets/images/screenshots/screenshot_14_responsive.png) | ![Web Preview](assets/images/screenshots/screenshot_15_web.png) |
 
 ---
 
 ## 🛠️ Tecnologías Utilizadas
- | Tecnología | Uso |
- |------------|-----|
- | **HTML5 Semántico** | Estructura accesible y SEO-friendly |
- | **CSS3** | Flexbox, CSS Grid, animaciones y variables CSS |
- | **JavaScript Vanilla** | Interactividad sin dependencias |
- | **GitHub Pages** | Hosting gratuito y despliegue continuo |
- | **JetBrains Mono** | Tipografía monoespaciada para código |
- | **Inter** | Tipografía sans-serif para lectura general |
+
+| Tecnología | Uso |
+|:---|:---|
+| **HTML5 Semántico** | Estructura accesible y SEO-friendly |
+| **CSS3** | Flexbox, CSS Grid, animaciones, variables CSS |
+| **JavaScript Vanilla** | Interactividad sin dependencias |
+| **GitHub Pages** | Hosting gratuito y despliegue continuo |
+| **JetBrains Mono** | Tipografía monoespaciada para código |
+| **Inter** | Tipografía sans-serif para lectura general |
 
 ---
 
 ## 📋 Los 10 Comandos Cubiertos
- | #  | Comando | Categoría | Utilidad |
- |----|---------|-----------|----------|
- | 01 | `ls -la` | Navegación | Listar archivos con permisos y ocultos |
- | 02 | `cd / pwd` | Navegación | Navegación y ubicación absoluta |
- | 03 | `chmod / chown` | Permisos | Gestión de permisos y propiedad |
- | 04 | `grep -r` | Búsqueda | Búsqueda de patrones en archivos |
- | 05 | `find / locate` | Localización | Localización avanzada de archivos |
- | 06 | `ps aux / htop` | Monitoreo | Monitoreo de procesos del sistema |
- | 07 | `tar / gzip` | Compresión | Compresión y empaquetado |
- | 08 | `ssh / scp / rsync` | Remoto | Conexión remota y transferencia de archivos |
- | 09 | `systemctl` | Servicios | Gestión de servicios con systemd |
- | 10 | `journalctl / dmesg` | Logs | Análisis de logs del sistema |
+
+| # | Comando | Categoría | Utilidad |
+|:---:|:---|:---|:---|
+| 01 | `ls -la` | Navegación | Listar archivos con permisos y ocultos |
+| 02 | `cd / pwd` | Navegación | Navegación y ubicación absoluta |
+| 03 | `chmod / chown` | Permisos | Gestión de permisos y propiedad |
+| 04 | `grep -r` | Búsqueda | Búsqueda de patrones en archivos |
+| 05 | `find / locate` | Localización | Localización avanzada de archivos |
+| 06 | `ps aux / htop` | Monitoreo | Monitoreo de procesos del sistema |
+| 07 | `tar / gzip` | Compresión | Compresión y empaquetado |
+| 08 | `ssh / scp / rsync` | Remoto | Conexión remota y transferencia |
+| 09 | `systemctl` | Servicios | Gestión de servicios con systemd |
+| 10 | `journalctl / dmesg` | Logs | Análisis de logs del sistema |
 
 ---
 
 ## 📦 Instalación Local
 
 ### Requisitos
-- Navegador moderno (Chrome, Firefox, Edge, Safari)
-- [Git](https://git-scm.com/downloads) *(opcional, para clonar el repositorio)*
-- [VS Code](https://code.visualstudio.com/) *(recomendado, con la extensión Live Server)*
+- Cualquier navegador moderno (Chrome, Firefox, Edge, Safari)
+- [Git](https://git-scm.com/downloads) (opcional, para clonar)
+- [VS Code](https://code.visualstudio.com/) (recomendado, con extensión Live Server)
 
 ### Pasos
 
@@ -73,14 +76,14 @@ La idea es simple: compartir los comandos de terminal que **realmente uso en mi 
 # 1. Clonar el repositorio
 git clone https://github.com/darwinjcn/linux-terminal-guide.git
 
-# 2. Acceder al directorio del proyecto
+# 2. Entrar al directorio
 cd linux-terminal-guide
 
 # 3. Abrir en VS Code
 code .
 
-# 4. Instalar la extensión "Live Server" en VS Code
-# 5. Hacer clic derecho en index.html → "Open with Live Server"
+# 4. Instalar extensión "Live Server" en VS Code
+# 5. Clic derecho en index.html → "Open with Live Server"
 # 6. ¡Listo! Se abrirá en http://127.0.0.1:5500
 ```
 
