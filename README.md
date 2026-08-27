@@ -2,10 +2,10 @@
 
 > **Una guía interactiva de los 10 comandos esenciales que todo Ingeniero en Informática debe dominar.**
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-2ea043?style=flat-square&logo=github&scale=3)](https://darwinjcn.github.io/linux-terminal-guide/)
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white&scale=3)](https://developer.mozilla.org/es/docs/Web/HTML)
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white&scale=3)](https://developer.mozilla.org/es/docs/Web/CSS)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black&scale=3)](https://developer.mozilla.org/es/docs/Web/JavaScript)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-2ea043?style=for-the-badge&logo=github&logoColor=white)](https://darwinjcn.github.io/linux-terminal-guide/)
+[![HTML5](https://img.shields.io/badge/HTML5-5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/es/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/es/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/es/docs/Web/JavaScript)
 
 ---
 
@@ -140,25 +140,24 @@ linux-terminal-guide/
 
 ## 📸 Capturas de Evidencia
 
-| # | Archivo | Descripción | Entorno |
-|:---:|:---|:---|:---|
-| 1 | `screenshot_01_terminal.png` | Terminal con `neofetch` mostrando Ubuntu 24.04 | Linux (WSL2) |
-| 2 | `screenshot_02_ls-la.png` | Comando `ls -la` en acción | Linux (WSL2) |
-| 3 | `screenshot_03_permissions.png` | `chmod` y `chown` aplicados | Linux (WSL2) |
-| 4 | `screenshot_04_grep.png` | Búsqueda con `grep -r` | Linux (WSL2) |
-| 5 | `screenshot_05_find.png` | Localización con `find` | Linux (WSL2) |
-| 6 | `screenshot_06_htop.png` | Monitoreo con `htop` | Linux (WSL2) |
-| 7 | `screenshot_07_tar.png` | Compresión con `tar` | Linux (WSL2) |
-| 8 | `screenshot_08_ssh.png` | Conexión SSH exitosa | Linux (WSL2) |
-| 9 | `screenshot_09_systemctl.png` | Estado de servicio con `systemctl` | Linux (WSL2) |
-| 10 | `screenshot_10_journalctl.png` | Logs en tiempo real | Linux (WSL2) |
-| 11 | `screenshot_11_vscode.png` | VS Code con el proyecto abierto | Windows 11 |
-| 12 | `screenshot_12_github_repo.png` | Repositorio en GitHub | Navegador |
-| 13 | `screenshot_13_github_pages.png` | Página desplegada en GitHub Pages | Navegador |
-| 14 | `screenshot_14_responsive.png` | Vista responsive móvil (DevTools iPhone SE) | Navegador |
-| 15 | `screenshot_15_web.png` | Vista completa de la página web en escritorio | Navegador |
-
-> 💡 **Nota:** Las capturas 1-10 deben tomarse en un entorno Linux real (WSL2, VM o servidor) para mayor autenticidad.
+> 💡 **Nota:** Haz clic en cualquier miniatura para ver la imagen en tamaño completo en GitHub.
+   #  | Miniatura | Archivo | Descripción | Entorno |
+ |----|-----------|---------|-------------|---------|
+ | 1  | [![Terminal con `neofetch`](https://raw.githubusercontent.com/darwinjcn/linux-terminal-guide/main/assets/images/screenshots/screenshot_01_terminal.png)](https://github.com/darwinjcn/linux-terminal-guide/blob/main/assets/images/screenshots/screenshot_01_terminal.png) | `screenshot_01_terminal.png` | Terminal con `neofetch` mostrando Ubuntu 24.04 | Linux (WSL2) |
+ | 2  | [![Ejecución de `ls -la`](https://raw.githubusercontent.com/darwinjcn/linux-terminal-guide/main/assets/images/screenshots/screenshot_02_ls-la.png)](https://github.com/darwinjcn/linux-terminal-guide/blob/main/assets/images/screenshots/screenshot_02_ls-la.png) | `screenshot_02_ls-la.png` | Ejecución del comando `ls -la` | Linux (WSL2) |
+ | 3  | [![Uso de `chmod` y `chown`](https://raw.githubusercontent.com/darwinjcn/linux-terminal-guide/main/assets/images/screenshots/screenshot_03_permissions.png)](https://github.com/darwinjcn/linux-terminal-guide/blob/main/assets/images/screenshots/screenshot_03_permissions.png) | `screenshot_03_permissions.png` | Uso de `chmod` y `chown` | Linux (WSL2) |
+ | 4  | [![Búsqueda con `grep -r`](https://raw.githubusercontent.com/darwinjcn/linux-terminal-guide/main/assets/images/screenshots/screenshot_04_grep.png)](https://github.com/darwinjcn/linux-terminal-guide/blob/main/assets/images/screenshots/screenshot_04_grep.png) | `screenshot_04_grep.png` | Búsqueda con `grep -r` | Linux (WSL2) |
+ | 5  | [![Localización con `find`](https://raw.githubusercontent.com/darwinjcn/linux-terminal-guide/main/assets/images/screenshots/screenshot_05_find.png)](https://github.com/darwinjcn/linux-terminal-guide/blob/main/assets/images/screenshots/screenshot_05_find.png) | `screenshot_05_find.png` | Localización con `find` | Linux (WSL2) |
+ | 6  | [![Monitoreo con `htop`](https://raw.githubusercontent.com/darwinjcn/linux-terminal-guide/main/assets/images/screenshots/screenshot_06_htop.png)](https://github.com/darwinjcn/linux-terminal-guide/blob/main/assets/images/screenshots/screenshot_06_htop.png) | `screenshot_06_htop.png` | Monitoreo con `htop` | Linux (WSL2) |
+ | 7  | [![Compresión con `tar`](https://raw.githubusercontent.com/darwinjcn/linux-terminal-guide/main/assets/images/screenshots/screenshot_07_tar.png)](https://github.com/darwinjcn/linux-terminal-guide/blob/main/assets/images/screenshots/screenshot_07_tar.png) | `screenshot_07_tar.png` | Compresión con `tar` | Linux (WSL2) |
+ | 8  | [![Conexión SSH exitosa](https://raw.githubusercontent.com/darwinjcn/linux-terminal-guide/main/assets/images/screenshots/screenshot_08_ssh.png)](https://github.com/darwinjcn/linux-terminal-guide/blob/main/assets/images/screenshots/screenshot_08_ssh.png) | `screenshot_08_ssh.png` | Conexión SSH exitosa | Linux (WSL2) |
+ | 9  | [![Estado de servicio con `systemctl`](https://raw.githubusercontent.com/darwinjcn/linux-terminal-guide/main/assets/images/screenshots/screenshot_09_systemctl.png)](https://github.com/darwinjcn/linux-terminal-guide/blob/main/assets/images/screenshots/screenshot_09_systemctl.png) | `screenshot_09_systemctl.png` | Estado de servicio con `systemctl` | Linux (WSL2) |
+ | 10 | [![Logs en tiempo real](https://raw.githubusercontent.com/darwinjcn/linux-terminal-guide/main/assets/images/screenshots/screenshot_10_journalctl.png)](https://github.com/darwinjcn/linux-terminal-guide/blob/main/assets/images/screenshots/screenshot_10_journalctl.png) | `screenshot_10_journalctl.png` | Logs en tiempo real | Linux (WSL2) |
+ | 11 | [![VS Code con el proyecto abierto](https://raw.githubusercontent.com/darwinjcn/linux-terminal-guide/main/assets/images/screenshots/screenshot_11_vscode.png)](https://github.com/darwinjcn/linux-terminal-guide/blob/main/assets/images/screenshots/screenshot_11_vscode.png) | `screenshot_11_vscode.png` | VS Code con el proyecto abierto | Windows 11 |
+ | 12 | [![Repositorio en GitHub](https://raw.githubusercontent.com/darwinjcn/linux-terminal-guide/main/assets/images/screenshots/screenshot_12_github_repo.png)](https://github.com/darwinjcn/linux-terminal-guide/blob/main/assets/images/screenshots/screenshot_12_github_repo.png) | `screenshot_12_github_repo.png` | Repositorio en GitHub | Navegador |
+ | 13 | [![Página desplegada en GitHub Pages](https://raw.githubusercontent.com/darwinjcn/linux-terminal-guide/main/assets/images/screenshots/screenshot_13_github_pages.png)](https://github.com/darwinjcn/linux-terminal-guide/blob/main/assets/images/screenshots/screenshot_13_github_pages.png) | `screenshot_13_github_pages.png` | Página desplegada en GitHub Pages | Navegador |
+ | 14 | [![Vista responsive en móvil](https://raw.githubusercontent.com/darwinjcn/linux-terminal-guide/main/assets/images/screenshots/screenshot_14_responsive.png)](https://github.com/darwinjcn/linux-terminal-guide/blob/main/assets/images/screenshots/screenshot_14_responsive.png) | `screenshot_14_responsive.png` | Vista responsive en móvil (DevTools iPhone SE) | Navegador |
+ | 15 | [![Vista completa de la página web](https://raw.githubusercontent.com/darwinjcn/linux-terminal-guide/main/assets/images/screenshots/screenshot_15_web.png)](https://github.com/darwinjcn/linux-terminal-guide/blob/main/assets/images/screenshots/screenshot_15_web.png) | `screenshot_15_web.png` | Vista completa de la página web en escritorio | Navegador |
 
 ---
 
